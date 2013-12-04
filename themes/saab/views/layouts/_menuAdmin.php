@@ -17,7 +17,6 @@
     <ul>
       <li><a href="<?php echo Yii::app()->request->baseUrl; ?>/entrada">Registrar Entrada</a></li>
       <li><a href="<?php echo Yii::app()->request->baseUrl; ?>/pecosa">Registrar Salida</a></li>
-      <li><a href="<?php echo Yii::app()->request->baseUrl; ?>/requerimiento/autorizacion">Autorización de Salida</a></li>         
     </ul>
   </li>
   <!--li><a href="<?php echo Yii::app()->request->baseUrl; ?>/kardex1" <?php echo $e; ?>><i class="icon-table"></i>  Kardex</a></li-->

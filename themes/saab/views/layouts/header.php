@@ -116,14 +116,6 @@ $usuario=Usuario::model()->findByAttributes(array('USU_usuario' => Yii::app()->u
             <li><a id="help" href="<?php echo Yii::app()->request->baseUrl; ?>/site/help"><span id="badge-help" class="badge"><i class="icon-question-sign"></i></span> Ayuda</a></li>
           </ul>
 
-          <!-- Search form -->
-          <!-- <form class="navbar-search form-search pull-left">
-            <div class="input-append">
-              <input type="text" class="search-query sear" placeholder="Buscar...">
-              <button type="submit" class="btn"><i class="icon-search"></i></button>
-            </div>
-          </form> -->
-
           <!-- Links -->
           <ul class="nav pull-right">
             <li class="dropdown pull-right">            
@@ -152,9 +144,9 @@ $usuario=Usuario::model()->findByAttributes(array('USU_usuario' => Yii::app()->u
         <div class="span6">
           <!-- Logo. -->
           <div class="logo">
-            <img id="logo" src="<?php echo Yii::app()->theme->baseUrl; ?>/img/dirtepol.png" height="60" width="60" alt="GRELL"><h2 style="margin-left:80px;padding-top:10px;">
+            <img id="logo" src="<?php echo Yii::app()->theme->baseUrl; ?>/img/grell.png" height="60" width="60" alt="GRELL"><h2 style="margin-left:80px;padding-top:10px;">
             <a href="<?php echo Yii::app()->request->baseUrl; ?>/site/index"><span class="bold">Sistema Administrativo de Abastecimiento</span></a><h4 style="padding-left:5px;padding-top:10px;">
-            <p style="margin-left:80px" class="meta">POLICIA NACIONAL DEL PERU - III DIRTEPOL - La Libertad</p></h4>
+            <p style="margin-left:80px" class="meta">Gerencia Regional de Educación - La Libertad</p></h4>
           </div>
           <!-- Logo ends -->
         </div>

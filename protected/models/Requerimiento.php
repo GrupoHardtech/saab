@@ -126,4 +126,12 @@ class Requerimiento extends CActiveRecord
 				),
 		));
 	}
+
+    protected function afterConstruct() {
+        $this->REQ_fecha = date("Y-m-d");
+        $this->REQ_estado = "Requerido";
+        $this->TIPO = "b";
+        $this->REQ_presupuesto = 0;
+        parent::afterConstruct();
+    }
 }

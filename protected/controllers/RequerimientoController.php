@@ -87,7 +87,6 @@ class RequerimientoController extends Controller
         if(isset($_POST['Requerimiento']))
 		{
 			$model->attributes=$_POST['Requerimiento'];
-			//$transaction=Yii::app()->db->beginTransaction();//transacciones
 			if($model->save()){
 				if($model->TIPO=='b'){
 					$compra=Yii::app()->user->getState('comprar');
@@ -278,8 +277,8 @@ class RequerimientoController extends Controller
 				}
 
 			}
-			else
-				$transaction->rollBack();
+			// else
+			// 	$transaction->rollBack();
 		}
 		else{
 			

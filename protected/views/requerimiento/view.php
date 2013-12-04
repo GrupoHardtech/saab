@@ -6,18 +6,13 @@ $this->breadcrumbs=array(
 ?>
 
 <?php 
-
   Yii::app()->user->setState('comprar',null);
   Yii::app()->user->setState('idcomprar',0);
-
 $form=$this->beginWidget('bootstrap.widgets.TbActiveForm',array(
   'id'=>'requerimiento-form',
   'enableAjaxValidation'=>false,
-  // 'enableClientValidation'=>false,
-  // 'clientOptions'=>array(
-  //     'validateOnSubmit'=>true,
-  //   )
-  )); ?>
+  ));
+?>
 
 <?php echo $form->errorSummary($model); ?>
 
@@ -39,7 +34,7 @@ $form=$this->beginWidget('bootstrap.widgets.TbActiveForm',array(
           </div>
           <div class="control-group">
             <label for="unidad" class="control-label">Unidad:</label>
-            <div class="controls"><p>Empresa </p></div>
+            <div class="controls"><p>Gerencia Regional de Educación La Libertad</p></div>
           </div>
           <div class="control-group">
             <?php
@@ -131,7 +126,6 @@ $form=$this->beginWidget('bootstrap.widgets.TbActiveForm',array(
                   },
                   )
                 );
-                
 
                 array_push($columns, array(
                   'header' => 'Servicio',
@@ -144,12 +138,7 @@ $form=$this->beginWidget('bootstrap.widgets.TbActiveForm',array(
                   'value'=>'$data->RSE_detalle',
                   )
                 );
-
-                
-                
-                             
             }
-
 
             $this->widget('bootstrap.widgets.TbGridView', array(
               'type'=>'bordered',
@@ -179,6 +168,7 @@ $form=$this->beginWidget('bootstrap.widgets.TbActiveForm',array(
 
           }
           ?>
+          
           <?php
 
           if ((Yii::app()->user->checkAccess("administrador") or Yii::app()->user->checkAccess("abastecimiento")) && ($model->REQ_estado=='Requerido' or $model->REQ_estado=='Necesitado'))
@@ -204,9 +194,6 @@ $form=$this->beginWidget('bootstrap.widgets.TbActiveForm',array(
             </div>
           </div>";
           }
-
-
-
           ?>
         </form>
         <br><br>

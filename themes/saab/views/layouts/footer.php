@@ -11,13 +11,13 @@
     <div class="row-fluid">
       <div class="span4">
         <!-- Copyright info -->
-        <p class="copy">Copyright &copy; 2013 | <a href="#"></a></a></p>
+        <p class="copy">Copyright &copy; 2013 | <a href="#">Horna Rodríguez</a>, <a href="#">Quevedo Rodríguez</a></p>
       </div>
       <div class="span4">
       	<div id="reloj"></div>
       </div>
       <div class="span4">
-        <p class="copy center"><a href="http://www.grelalibertad.gob.pe/" target="_blank">POLICIA NACIONAL DEL PERU - III DIRTEPOL - La Libertad</a></p>
+        <p class="copy center"><a href="http://www.grelalibertad.gob.pe/" target="_blank">Gerencia Regional de Educación - La Libertad</a></p>
       </div>
     </div>
   </div>
