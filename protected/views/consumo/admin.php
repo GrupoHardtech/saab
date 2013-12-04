@@ -31,7 +31,7 @@ $('.search-form form').submit(function(){
 <h3>Consumos Totales por Bien</h3>
 <br/>
 
-<div class="span8 offset2">
+<div class="span10 offset1">
 <?php
 $columns=array();
 

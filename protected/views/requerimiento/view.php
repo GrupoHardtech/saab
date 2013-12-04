@@ -110,9 +110,7 @@ $form=$this->beginWidget('bootstrap.widgets.TbActiveForm',array(
                             $id_comprar=array_merge((array)$id_comprar,(array)$idbien);
                             Yii::app()->user->setState('comprar',$col_comprar);
                             Yii::app()->user->setState('idcomprar',$id_comprar);
-
-
-                            return CHtml::textField('cantidad', $compra);
+                            return CHtml::textField('cantidad', $compra,array('class'=>'span5'));
                     },
                     )
                   );

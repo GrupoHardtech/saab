@@ -10,8 +10,6 @@ $form=$this->beginWidget('bootstrap.widgets.TbActiveForm',array(
 
 <?php echo $form->hiddenField($requerimiento,'REQ_estado',array('class'=>'span5','value'=>'Aprobado')); ?>
 
-<?php //echo $form->textFieldRow($model,'IDREQUERIMIENTO',array('class'=>'span5')); ?>
-
 <div class="control-group">
 	<table class="table tableAdd table-bordered">
 		<thead>
@@ -49,7 +47,8 @@ $form=$this->beginWidget('bootstrap.widgets.TbActiveForm',array(
 								'select' => 'js:function(event, ui){
 									jQuery("#razonSocial").val(ui.item["razonSocial"]);
 									jQuery("#ruc").val(ui.item["ruc"]);
-									jQuery("#idProveedor").val(ui.item["idProveedor"]);  
+									jQuery("#idProveedor").val(ui.item["idProveedor"]);
+									jQuery("#monto").focus();
 								}'
 							),
 						));
@@ -69,7 +68,6 @@ $form=$this->beginWidget('bootstrap.widgets.TbActiveForm',array(
     				echo CHtml::link("<i class='icon-plus'></i>",
     					array('addCotizacion'),
     					array(
-    						// 'disabled' => 'true',
     						'id' => 'btnAdd',
     						'class' => 'btn btn-primary',
     						'ajax' => array(
@@ -86,6 +84,7 @@ $form=$this->beginWidget('bootstrap.widgets.TbActiveForm',array(
     							}",
     							'success' => "function(data) {
     								$('#razonSocial').val('');
+    								$('#razonSocial').focus();
     								$('#idProveedor').val('');
     								$('#ruc').val('');
     								$('#monto').val('');
@@ -97,7 +96,7 @@ $form=$this->beginWidget('bootstrap.widgets.TbActiveForm',array(
     				?>
 	        	</td>
 	        </tr>
-	        </tbody>
+	    </tbody>
 	</table>
 	<br>
 
@@ -107,10 +106,10 @@ $form=$this->beginWidget('bootstrap.widgets.TbActiveForm',array(
 	echo "</div>";
 	?>
 </div>
+
 <div id="divAnalizar" class="control-group center">
 	<div class="controls">
 		<?php
-
 		echo CHtml::link("Analizar", 
 			array('analizar'),
 			array(
@@ -118,23 +117,13 @@ $form=$this->beginWidget('bootstrap.widgets.TbActiveForm',array(
 				'class' => 'btn',
 				'ajax' => array(
 					'type' => 'POST',
-                          // 'url' => $this->createUrl('Requerimiento/buscaBien'),
 					'url' => "js:$(this).attr('href')",
 					'data' => array(
-						// 'idbien' => "js: $('#idbien').val()",
-						// 'rbi_cantidad' => "js: $('#cantidadBien').val()",
-						// 'descripcion' => "js: $('#catalogoBien').val()",
-						// 'unidad'=>"js: $('#unidad_catalogo').val()",
 						),
 					'error' => "function(req, status, error) {
 						alert(req.responseText);
 					}",
 					'success' => "function(data) {
-						// $('#unidad_catalogo').val('');
-						// $('#idbien').val('');
-						// $('#cantidadBien').val('');
-						// $('#catalogoBien').val('');
-						// $('#order-detail-div').html(data);                                
 					}"
 					),
 
@@ -151,29 +140,16 @@ $form=$this->beginWidget('bootstrap.widgets.TbActiveForm',array(
 		else 
 			$this->renderPartial('_servicios',array('requerimiento_servicio'=>$requerimiento_servicio)); 		 
 	?>
-
 </div>
 
 <div class="form-actions text-center">
 	<?php
-	
-	// echo CHtml::link('Guardar',
-	// 	array('grabar'),
-	// 	array(
-	// 		'class' => 'btn btn-primary',
-	// 		'id'=> 'btnGuardarCotizacion',
-	// 		)
-	// 	);
+	$this->widget('bootstrap.widgets.TbButton', array(
+		'buttonType'=>'submit',
+		'type'=>'secondary',
+		'label'=>$model->isNewRecord ? 'Imprimir Acta Otorgamiento y Generar Orden de Compra' : 'Actualizar',
+	));
 	?>
 </div>
-
-	<div class="form-actions text-center">
-		<?php $this->widget('bootstrap.widgets.TbButton', array(
-			'buttonType'=>'submit',
-			'type'=>'secondary',
-			'label'=>$model->isNewRecord ? 'Imprimir Acta Otorgamiento y Generar Orden de Compra' : 'Actualizar',
-		)); ?>
-
-	</div>
 
 <?php $this->endWidget(); ?>

@@ -21,7 +21,7 @@ $this->breadcrumbs=array(
         </div>
         <div class="control-group">
           <label for="unidad" class="control-label">Unidad:</label>
-          <div class="controls"><p>Empresa Ficticia</p></div>
+          <div class="controls"><p>Gerencia Regional de Educación La Libertad</p></div>
         </div>
       </form>
       <hr>
