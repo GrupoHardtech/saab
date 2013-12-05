@@ -72,7 +72,7 @@ class Catalogo extends CActiveRecord
 	public function attributeLabels()
 	{
 		return array(
-			'IDCATALOGO' => 'Idcatalogo',
+			'IDCATALOGO' => 'Nº Catalogo',
 			'CAT_descripcion' => 'Bien',
 			'CAT_codigo' => 'Código',
 			'CAT_unidad' => 'Unidad',
