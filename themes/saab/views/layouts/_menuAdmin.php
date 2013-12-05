@@ -24,8 +24,8 @@
   <li class="has_sub"><a href="" <?php echo $g; ?>><i class="icon-file-alt"></i> Reportes<span class="pull-right"><i class="icon-chevron-right"></i></span></a>
       <ul>
       <li><a href="<?php echo Yii::app()->request->baseUrl; ?>/consumo">Reporte Consumo</a></li>
-      <li><a href="<?php echo Yii::app()->request->baseUrl; ?>/ingresos">Reporte Ingresos</a></li>
-      <!--li><a href="<?php echo Yii::app()->request->baseUrl; ?>/requerimiento/autorizacion">Autorización de Salida</a></li-->         
+      <li><a href="<?php echo Yii::app()->request->baseUrl; ?>/ingresos">Reporte Ingresos</a></li>    
+      <li><a href="<?php echo Yii::app()->request->baseUrl; ?>/kardex">Kardex</a></li>    
     </ul>
   </li>
   <li class="has_sub"><a href=""><i class="icon-wrench"></i> Mantenedores  <span class="pull-right"><i class="icon-chevron-right"></i></span></a>

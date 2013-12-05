@@ -51,9 +51,14 @@ class KardexController extends Controller
 	 */
 	public function actionView($id)
 	{
-		$this->render('view',array(
-			'model'=>$this->loadModel($id),
-		));
+		$model=$this->loadModel($id);
+
+        $kardex = new Kardex2();
+        $kardex->unsetAttributes();
+        $kardex->IDBIEN = $model->IDBIEN;
+        $dataProvider = $kardex->search();
+
+        $this->render("view",array('model' => $model,'dataProvider' => $dataProvider));
 	}
 
 	/**
@@ -128,7 +133,7 @@ class KardexController extends Controller
 	 */
 	public function actionIndex()
 	{
-		$dataProvider=new CActiveDataProvider('Kardex');
+		$dataProvider=new CActiveDataProvider('Bien');
 		$this->render('index',array(
 			'dataProvider'=>$dataProvider,
 		));
@@ -139,10 +144,10 @@ class KardexController extends Controller
 	 */
 	public function actionAdmin()
 	{
-		$model=new Kardex('search');
+		$model=new Bien('search');
 		$model->unsetAttributes();  // clear any default values
-		if(isset($_GET['Kardex']))
-			$model->attributes=$_GET['Kardex'];
+		if(isset($_GET['Bien']))
+			$model->attributes=$_GET['Bien'];
 
 		$this->render('admin',array(
 			'model'=>$model,
@@ -156,10 +161,10 @@ class KardexController extends Controller
 	 */
 	public function loadModel($id)
 	{
-		$model=Kardex::model()->findByPk($id);
-		if($model===null)
-			throw new CHttpException(404,'The requested page does not exist.');
-		return $model;
+		$model = Bien::model()->findByPk(array(
+            'IDBIEN' => $id
+                ));
+        return $model;
 	}
 
 	/**

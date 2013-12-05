@@ -24,11 +24,15 @@ $('.search-form form').submit(function(){
 ?>
 
 
-<div class="search-form" style="display:none">
+<div class="search-form">
 <?php $this->renderPartial('_search',array(
 	'model'=>$model,
 )); ?>
 </div><!-- search-form -->
+<br/><br/>
+<hr>
+<h3>Lista de Bienes</h3>
+<br/>
 
 <?php $this->widget('bootstrap.widgets.TbGridView',array(
 	'id'=>'kardex-grid',
@@ -36,16 +40,13 @@ $('.search-form form').submit(function(){
 	'type'=>'bordered hover',
     'template'=>"{items}{pager}",
 	'columns'=>array(
-		
-		'KAR_fechaMovimiento',
-		'KAR_detalle',
-		'IDENTRADABIEN',
-		'IDENTRADA',
-		'IDPECOSABIEN',
-		'IDPECOSA',
-		
-		// array(
-		// 	'class'=>'bootstrap.widgets.TbButtonColumn',
-		// ),
+		'IDBIEN',
+		'iDCATALOGO.CAT_descripcion',
+		array(
+			'header'=>'Detalles',
+			'class'=>'bootstrap.widgets.TbButtonColumn',
+			'template'=>"{view}",
+		),
+
 	),
 )); ?>
