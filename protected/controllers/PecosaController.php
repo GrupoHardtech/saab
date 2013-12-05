@@ -54,7 +54,16 @@ class PecosaController extends Controller
 	 */
 	public function actionView($id)
 	{
-		$this->redirect(array('//ordenCompra/'.$id));
+		$model = $this->loadModel($id);
+
+		$requerimiento_bien = new RequerimientoBien();
+		$requerimiento_bien->unsetAttributes();
+		$requerimiento_bien->IDREQUERIMIENTO = $model->iDREQUERIMIENTO->IDREQUERIMIENTO;
+
+		$this->render('view',array(
+			'model'=>$model,
+			'requerimiento_bien'=>$requerimiento_bien,	
+		));
 	}
 
 	/**
@@ -112,7 +121,7 @@ class PecosaController extends Controller
 						
 					}
 				}
-				$this->redirect(array('admin'));
+				$this->redirect(array('view','id'=>$model->IDPECOSA));
 			}
 
 			$this->render('create',array(

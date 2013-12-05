@@ -49,7 +49,7 @@
               </div>
               <div class="control-group">
                 <label class="control-label">Facturara a nombre de:</label>
-                <div class="controls"><p><?php echo Variables::model()->findByPk(4)->VAR_valor?></p></div>
+                <div class="controls"><p>Gerencia Regional de Educación La Libertad</p></div>
               </div>
               <div class="control-group">
                 <label class="control-label">Lo siguiente:</label>

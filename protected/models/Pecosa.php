@@ -59,7 +59,6 @@ class Pecosa extends CActiveRecord {
             'iDREQUERIMIENTO' => array(self::BELONGS_TO, 'Requerimiento', 'IDREQUERIMIENTO'),
             'iDUSUARIO' => array(self::BELONGS_TO, 'Usuario', 'IDUSUARIO'),
             'pecosaBiens' => array(self::HAS_MANY, 'PecosaBien', 'IDPECOSA'),
-//            'bien'=>array(self::MANY_MANY,'Bien','Requerimiento(IDBIEN,IDREQUERIMIENTO)'),
         );
     }
 

@@ -70,7 +70,7 @@ array_push($columns, array(
             $html .= CHtml::link("<i class='icon-plus'></i>", array('create', 'id' => $data->IDORDENCOMPRA), array('title' => 'Añadir',));             
         }
         else
-            $html .= CHtml::link("<i class='icon-eye-open'></i>", array('view', 'id' => $data->IDORDENCOMPRA), array('title' => 'Añadir',));          	
+            $html .= CHtml::link("<i class='icon-eye-open'></i>", array('view', 'id' => $data->iDREQUERIMIENTO->IDREQUERIMIENTO), array('title' => 'Añadir',));          	
         return $html;
     },
 ));

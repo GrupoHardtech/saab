@@ -70,6 +70,15 @@ $this->breadcrumbs = array(
       },
   ));
 
+  array_push($columns, array(
+      'header' => 'Total',
+      'htmlOptions' => array('style'=>'text-align:center'),
+      'type' => 'raw',
+      'value' => function($row) use (&$total){
+          return $total = $total + $row->entradas - $row->salidas;
+      },
+  ));
+
   $dataProvider->pagination = false;
   $gridParams = array(
       'id' => 'SaleViewDetail',
