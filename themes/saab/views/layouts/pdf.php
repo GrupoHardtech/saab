@@ -60,7 +60,7 @@
 
   </script>
 <label class="text-center" style="position:absolute;top:110px;font-size:10px;"><br></label><br>
-  <img id="logo" src="/saab/themes/saab/img/dirtepol.png" height="90" width="90" alt="GRELL" style="position:absolute;top:-2px">
+  <img id="logo" src="/saab/themes/saab/img/grell.png" height="90" width="90" alt="GRELL" style="position:absolute;top:-2px">
   <div class="container">
             
   <br/>
